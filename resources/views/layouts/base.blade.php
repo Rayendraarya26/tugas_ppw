@@ -27,100 +27,104 @@
   <link rel="stylesheet" href="{{asset('LTE/plugins/summernote/summernote-bs4.min.css')}}">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
-
-
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="info">
-          <a href="#" class="d-block">Hi,Rayendra!</a>
-        </div>
-      </div>
-
-      <div class="card-body">
-        @auth
-        <p>Welcome <b>{{ Auth::user()->name }}</b></p>
-        <a class="btn btn-danger" href="{{ route('logout') }}">Logout</a>
-        @endauth
-        @guest
-        <a class="btn btn-primary" href="{{ route('login') }}">Login</a>
-        <a class="btn btn-info" href="{{ route('register') }}">Register</a>
-        @endguest
-      </div>
-
-      <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
+  <div>
+    
+  </div>
+  <div>
+    <div class="wrapper">
+      <!-- Main Sidebar Container -->
+      <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Sidebar user panel (optional) -->
+          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="info">
+              <a href="#" class="d-block">Hi,Rayendra!</a>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/home" class="nav-link">
-                  <p>Portofolio</p>
-                  <i class="fas fa-angle-right right"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/posts" class="nav-link">
-                  <p>Posts</p>
-                  <i class="fas fa-angle-right right"></i>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <p>Account</p>
-                  <i class="fas fa-angle-right right"></i>
-                </a>
+          <div class="card-body">
+            @auth
+            <p>Welcome <b>{{ Auth::user()->name }}</b></p>
+            <a class="btn btn-danger" href="{{ route('logout') }}">Logout</a>
+            @endauth
+            @guest
+            <a class="btn btn-primary" href="{{ route('login') }}">Login</a>
+            <a class="btn btn-info" href="{{ route('register') }}">Register</a>
+            @endguest
+          </div>
+
+          <!-- SidebarSearch Form -->
+          <div class="form-inline">
+            <div class="input-group" data-widget="sidebar-search">
+              <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-sidebar">
+                  <i class="fas fa-search fa-fw"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sidebar Menu -->
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
+                  with font-awesome or any other icon font library -->
+              <li class="nav-item menu-open">
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="/home" class="nav-link">
+                      <p>Portofolio</p>
+                      <i class="fas fa-angle-right right"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/posts" class="nav-link">
+                      <p>Posts</p>
+                      <i class="fas fa-angle-right right"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <p>Account</p>
+                      <i class="fas fa-angle-right right"></i>
+                    </a>
+                  </li>
+                </ul>
               </li>
             </ul>
-          </li>
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
+          </nav>
+          <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+      </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-  @include('Part.navbar')
-    <main>
-        <div class="container">
-            @yield('content')
-        </div>  
-    </main>
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+      @include('Part.navbar')
+        <main>
+            <div class="container">
+                @yield('content')
+            </div>  
+        </main>
+      </div>
+      <footer class="main-footer">
+        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+        All rights reserved.
+        <div class="float-right d-none d-sm-inline-block">
+          <b>Version</b> 3.2.0
+        </div>
+      </footer>
+
+      <!-- Control Sidebar -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+      </aside>
+      <!-- /.control-sidebar -->
+    </div>
   </div>
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0
-    </div>
-  </footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-</div>
 <!-- ./wrapper -->
 
 <!-- jQuery -->
