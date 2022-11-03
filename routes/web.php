@@ -10,6 +10,8 @@ use App\Http\Controllers\SendEmailController;
 use App\Http\Controllers\Auth\LoginController;
 
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -71,3 +73,6 @@ Route::post('/post-email', [SendEmailController::class, 'store'])->name('post-em
 //     dd("Email Berhasil dikirim.");
 //    });
 
+Route::get('/test/env', function () {
+    dd(env('DB_DATABASE')); // Dump 'db' variable value one by one
+});

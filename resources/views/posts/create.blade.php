@@ -13,7 +13,7 @@
                     </ul>
                 </div>
             @endif --}}
-            <form action="{{ route('posts.store') }}" method="post">{{ csrf_field() }}
+            <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">{{ csrf_field() }}
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input type="text" class="form-control 
@@ -38,6 +38,15 @@
                             {{ $message }}
                         </div>
                     @enderror
+                </div>
+                <div class="form-group">
+                    <label for="input-file">File input</label>
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="input-file" name="picture">
+                            <label class="custom-file-label" for="input-file">Choose file</label>
+                        </div>
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button><br><br>
                 <a href="/posts">Back</a>

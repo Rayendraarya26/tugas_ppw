@@ -39,13 +39,12 @@
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="info">
-              <a href="#" class="d-block">Hi,Rayendra!</a>
+              <a>Hi, <b>{{ Auth::user()->name }}</b>!</a>
             </div>
           </div>
 
           <div class="card-body">
             @auth
-            <p>Welcome <b>{{ Auth::user()->name }}</b></p>
             <a class="btn btn-danger" href="{{ route('logout') }}">Logout</a>
             @endauth
             @guest
