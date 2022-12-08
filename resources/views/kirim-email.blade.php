@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="row justify-content-center">
-    <h3 class="text-center my-2">QUEUE LARAVEL</h3>
     <div class="col-md-4 p-4">
         {{-- send email --}}
         @if (session('status'))

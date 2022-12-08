@@ -39,7 +39,12 @@
           <!-- Sidebar user panel (optional) -->
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="info">
+              @auth
               <a>Hi, <b>{{ Auth::user()->name }}</b>!</a>
+              @endauth
+              @guest
+              <a>Hi There!</a>
+              @endguest
             </div>
           </div>
 
@@ -87,6 +92,12 @@
                   <li class="nav-item">
                     <a href="#" class="nav-link">
                       <p>Account</p>
+                      <i class="fas fa-angle-right right"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/send-email" class="nav-link">
+                      <p>Send Email</p>
                       <i class="fas fa-angle-right right"></i>
                     </a>
                   </li>
@@ -162,8 +173,3 @@
 <script src="dist/js/pages/dashboard.js"></script>
 </body>
 </html>
-
-
-
-
-
