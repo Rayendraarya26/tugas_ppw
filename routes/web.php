@@ -24,16 +24,9 @@ use App\Http\Controllers\Auth\LoginController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
-Route::get('/halo/{nama?}', function ($nama = 'captain') {
-    return '<h1>Ahoy '. $nama . '!</h1>';
-});
-
-Route::get('/halo-dunia', function () {
-    return view('halo-dunia', ['data' => 'Test Data']);
-});
 Route::get('/home', function () {
     return view('home');
 });
@@ -50,8 +43,11 @@ Route::get('/education', function () {
     return view('education');
 });
 
-Route::resource('posts',
-'App\Http\Controllers\PostController');
+Route::get('/galeri', function () {
+    return view('galeri');
+});
+
+Route::resource('posts','App\Http\Controllers\PostController');
 
 Auth::Routes([
     'reset' => false,
@@ -76,3 +72,4 @@ Route::post('/post-email', [SendEmailController::class, 'store'])->name('post-em
 Route::get('/test/env', function () {
     dd(env('DB_DATABASE')); // Dump 'db' variable value one by one
 });
+
