@@ -43,9 +43,7 @@ Route::get('/education', function () {
     return view('education');
 });
 
-Route::get('/galeri', function () {
-    return view('galeri');
-});
+Route::resource('gallery', 'App\Http\Controllers\GalleryController');
 
 Route::resource('posts','App\Http\Controllers\PostController');
 

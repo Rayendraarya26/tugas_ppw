@@ -90,7 +90,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="/galeri" class="nav-link">
+                    <a href="/gallery" class="nav-link">
                       <p>Gallery</p>
                       <i class="fas fa-angle-right right"></i>
                     </a>

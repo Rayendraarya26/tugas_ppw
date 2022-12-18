@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 date_default_timezone_set("Asia/Jakarta");
 
@@ -167,13 +168,15 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+        if ($post->picture) {
+            unlink('storage/posts_image/' . $post->picture);
+        }
         $post->delete();
         return redirect('posts')->with('success', 'Berhasil dihapus!!');
     }
 
     public function __construct()
     {
-    $this->middleware('auth');
+        $this->middleware('auth', ["except" => ["index", "show"]]);
     }
-
 }
